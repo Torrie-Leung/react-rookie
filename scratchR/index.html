@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <title>react scratch</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class App extends React.Component{
+      state = {
+        name: 'Bender',
+        age: 2300
+      }
+      handleClick=(e)=>{
+        //console.log(e.target)
+        this.setState({
+          name:'Yoshi',
+          age:'10'
+        })
+         console.log(this.state)
+      }
+      handleHover=(e)=>{
+        console.log(e.target,e.pageX)
+      }
+      handleCopy=(e)=>{
+        console.log('try being original for once')
+      }
+      handleChange= (e)=>{
+        this.setState({
+          name:e.target.value
+        });
+      }
+      handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log('form submited',this.state.name);
+      }
+      render(){
+        return (
+          <div className="app-content">
+            <h1>Hey,Monkeys</h1>
+            <p>{Math.random()*10}</p>
+            <p onCopy={this.handleCopy}>My name is: {this.state.name} and I am {this.state.age}</p>
+            <button onClick={this.handleClick}>Click</button>
+            <button onMouseOver={this.handleHover}>Hover</button>
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" onChange={this.handleChange}/>
+              <button>Submit</button>
+            </form>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App />,document.getElementById('app'));
+  </script>
+</body>
+</html>
