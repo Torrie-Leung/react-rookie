@@ -1,7 +1,7 @@
 import React from 'react';
 
 //use functional component when we don't need the state and primarilly concern the UI
-const Monkey = ({monkeys}) => {
+const Monkey = ({monkeys,removeMonkey}) => {
   //destructoring inside {} directly
   
   
@@ -24,20 +24,22 @@ const Monkey = ({monkeys}) => {
     
   // })
 
-  // const monkeyList = monkeys.map(monkey => {
-  //   return monkey.salary > 10000 ? (
-  //     <div className="monkey" key={monkey.id}>
-  //       <div>Name: {monkey.name}</div>
-  //       <div>job: {monkey.job}</div>
-  //       <div>Belt: {monkey.belt}</div>
-  //       <div>Salary: {monkey.salary}</div>
-  //     </div>
-  //   ) : null;
-  // })
+  const monkeyList = monkeys.map(monkey => {
+    return monkey.salary > 10000 ? (
+      <div className="monkey" key={monkey.id}>
+        <div>Name: {monkey.name}</div>
+        <div>job: {monkey.job}</div>
+        <div>Belt: {monkey.belt}</div>
+        <div>Salary: {monkey.salary}</div>
+        {/* use anonymous function to prevent automatic fire a funciton ⬇*/}
+        <button onClick={() =>{removeMonkey(monkey.id)}}>Remove Monkey</button>
+      </div>
+    ) : null;
+  })
   return (
     <div className="monkey-list">
-      {/* {monkeyList} */}
-      {
+      {monkeyList}
+      {/* {
          monkeys.map(monkey => {
           return monkey.salary > 10000 ? (
             <div className="monkey" key={monkey.id}>
@@ -48,7 +50,7 @@ const Monkey = ({monkeys}) => {
             </div>
           ) : null;
           })
-      }
+      } */}
     </div>
   )
   

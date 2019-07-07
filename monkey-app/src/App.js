@@ -21,12 +21,21 @@ class App extends Component {
       monkeys:monkeys
     })
   }
+  removeMonkey = (id) => {
+    //console.log(id);
+    let monkeys = this.state.monkeys.filter(monkey => {
+      return monkey.id !== id
+    });
+    this.setState({
+      monkeys:monkeys
+    })
+  }
   render(){
     return (
     <div className="App">
       <h1>My first React app</h1>
       <p>welcome:)</p>
-      <Monkey monkeys={this.state.monkeys}/>
+      <Monkey removeMonkey={this.removeMonkey} monkeys={this.state.monkeys}/>
       <AddMonkey addMonkey={this.addMonkey} testP="aha"/>
     </div>
   );
