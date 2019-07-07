@@ -6,9 +6,9 @@ import Monkey from './Monkey';
 class App extends Component {
   state = {
     monkeys: [
-      {name: 'Mario', job: 'player', belt: 'black',id:1},
-      {name: 'Yoshi', job: 'player', belt: 'blue',id:2},
-      {name: 'Chimp', job: 'developer', belt: 'yellow',id:3}
+      {name: 'Mario', job: 'player', belt: 'black',salary:23000,id:1},
+      {name: 'Yoshi', job: 'player', belt: 'blue',salary:13000,id:2},
+      {name: 'Chimp', job: 'developer', belt: 'yellow',salary:2300,id:3}
     ]
   }
   render(){
