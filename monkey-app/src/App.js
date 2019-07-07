@@ -12,13 +12,22 @@ class App extends Component {
       {name: 'Chimp', job: 'developer', belt: 'yellow',salary:2300,id:3}
     ]
   }
+  addMonkey = (monkey) => {
+    console.log(monkey);
+    monkey.id = Math.random();
+    //make a copy of the original state
+    let monkeys = [...this.state.monkeys,monkey]
+    this.setState({
+      monkeys:monkeys
+    })
+  }
   render(){
     return (
     <div className="App">
       <h1>My first React app</h1>
       <p>welcome:)</p>
       <Monkey monkeys={this.state.monkeys}/>
-      <AddMonkey />
+      <AddMonkey addMonkey={this.addMonkey} testP="aha"/>
     </div>
   );
   }
