@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Monkey from './Monkey';
+import AddMonkey from './AddMonkey';
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
       <h1>My first React app</h1>
       <p>welcome:)</p>
       <Monkey monkeys={this.state.monkeys}/>
+      <AddMonkey />
     </div>
   );
   }
