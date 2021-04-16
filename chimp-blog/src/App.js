@@ -1,4 +1,6 @@
-import './App.css';
+
+import Navbar from './Navbar';
+import Home from './Home/Home'
 // in version 17 we don't need to import react into the root component
 
 function App() {
@@ -10,7 +12,10 @@ function App() {
     // jsx
     <div className="App">
       <div className="content">
-        <h1>{ title }</h1>
+        <Navbar/>
+        <div className="content">
+          <Home/>
+        </div>
         <p>Liked { likes } times</p>
         <p>{master.name}</p>
         <p>random number:{Math.random()*10}</p>
