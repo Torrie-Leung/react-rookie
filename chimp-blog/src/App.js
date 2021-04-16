@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+// in version 17 we don't need to import react into the root component
 
 function App() {
+  const title = 'psst';
+  const likes = 50;
+  const master = { name: 'Yoshi', level: 30 }
+  const shameOnAcc = 'https://www.bilibili.com/video/BV1U54y1876i?from=search&seid=12668816523087272100'
   return (
     // jsx
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <h1>{ title }</h1>
+        <p>Liked { likes } times</p>
+        <p>{master.name}</p>
+        <p>random number:{Math.random()*10}</p>
+        <p>{[1,5,7]}</p>
+        <a href={shameOnAcc}>The Accountant Of Auschwitz
+</a>
+      </div>
     </div>
   );
 }
