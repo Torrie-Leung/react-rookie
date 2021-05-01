@@ -47,3 +47,9 @@
     color:#f1356d;
     margin-bottom:8px;
 }
+.delBtn{
+  margin-top: 10px;
+  color: #795548;
+  border:1px dashed #795548;
+  cursor: pointer;
+}
