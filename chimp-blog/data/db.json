@@ -1,0 +1,22 @@
+{
+    "blogs": [
+        {
+            "title": "Data Structure from craddle to grave",
+            "body": "Lets start from Linked list",
+            "author": "CodingChimp",
+            "id": 1
+        },
+        {
+            "title": "Be a real trouble maker",
+            "body": "sharp tounged but golden hearted",
+            "author": "CodingChimp",
+            "id": 2
+        },
+        {
+            "title": "My treasure",
+            "body": "How to collect all the stamps",
+            "author": "Yoshi",
+            "id": 3
+        }
+    ]
+}
